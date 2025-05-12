@@ -167,7 +167,12 @@
   dependencies:
     undici-types "~6.21.0"
 
-"@types/react@^19.1.4":
+"@types/react-dom@^19.0.4":
+  version "19.1.4"
+  resolved "https://registry.npmjs.org/@types/react-dom/-/react-dom-19.1.4.tgz"
+  integrity sha512-WxYAszDYgsMV31OVyoG4jbAgJI1Gw0Xq9V19zwhy6+hUUJlJIdZ3r/cbdmTqFv++SktQkZ/X+46yGFxp5XJBEg==
+
+"@types/react@^19.0.10":
   version "19.1.4"
   resolved "https://registry.npmjs.org/@types/react/-/react-19.1.4.tgz"
   integrity sha512-EB1yiiYdvySuIITtD5lhW4yPyJ31RkJkkDw794LaQYrxCSaQV/47y5o1FMC4zF9ZyjUjzJMZwbovEnT5yHTW6g==
@@ -1298,7 +1303,7 @@ http-errors@2.0.0, http-errors@^2.0.0:
 
 husky@^8.0.0:
   version "8.0.3"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-8.0.3.tgz#4936d7212e46d1dea28fef29bb3a108872cd9184"
+  resolved "https://registry.npmjs.org/husky/-/husky-8.0.3.tgz"
   integrity sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==
 
 iconv-lite@0.6.3, iconv-lite@^0.6.3:
