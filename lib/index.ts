@@ -1,3 +1,4 @@
+export * from "./utils/isDevMode";
 export * from "./hooks/useNuiEvent";
 export * from "./hooks/useNuiCallback";
 export * from "./hooks/useNuiRequest";

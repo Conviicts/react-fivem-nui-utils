@@ -6,3 +6,4 @@ export * from "./providers/NuiProvider";
 export * from "./utils/eventNameFactory";
 export * from "./utils/debugEvent";
 export * from "./utils/fetchNui";
+export * from "./utils/isDevMode";
