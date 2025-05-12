@@ -28,11 +28,8 @@ export const useNuiEvent = (app, method, handler) => {
     const savedHandler = useRef(null);
     // When handler value changes set mutable ref to handler val
     useEffect(() => {
-        if (!app || !method || !handler) {
-            throw new Error("App, method, and handler are required arguments.");
-        }
         savedHandler.current = handler;
-    }, [handler, app, method]);
+    }, [handler]);
     useEffect(() => {
         const eventName = eventNameFactory(app, method);
         const eventListener = (event) => {

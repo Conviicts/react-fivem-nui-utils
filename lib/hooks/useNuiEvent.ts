@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useRef } from "react";
+import { MutableRefObject, useEffect, useRef } from "react";
 import { eventNameFactory } from "../utils/eventNameFactory";
 
 function addEventListener<T extends EventTarget, E extends Event>(
@@ -32,15 +32,12 @@ function addEventListener<T extends EventTarget, E extends Event>(
  * useNuiEvent<boolean>("appname", "methodname", setDataState);
  **/
 export const useNuiEvent = <D = unknown>(app: string, method: string, handler: (r: D) => void): void => {
-  const savedHandler: RefObject<(r: D) => void> = useRef(null);
+  const savedHandler: MutableRefObject<(r: D) => void> = useRef(null);
 
   // When handler value changes set mutable ref to handler val
   useEffect(() => {
-    if (!app || !method || !handler) {
-      throw new Error("App, method, and handler are required arguments.");
-    }
     savedHandler.current = handler;
-  }, [handler, app, method]);
+  }, [handler]);
 
   useEffect(() => {
     const eventName = eventNameFactory(app, method);
