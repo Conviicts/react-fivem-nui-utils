@@ -1,3 +1,4 @@
+export * from "./utils/isDevMode";
 export * from "./hooks/useNuiEvent";
 export * from "./hooks/useNuiCallback";
 export * from "./hooks/useNuiRequest";
@@ -6,4 +7,3 @@ export * from "./providers/NuiProvider";
 export * from "./utils/eventNameFactory";
 export * from "./utils/debugEvent";
 export * from "./utils/fetchNui";
-export * from "./utils/isDevMode";
