@@ -1,46 +1,64 @@
-import React from 'react';
+import React = require('react');
 
-// Types for NuiProvider
+// NuiProvider
+export const NuiProvider: React.FC<NuiProviderProps>;
+
+// NuiProviderProps
 export interface NuiProviderProps {
   resource: string;
   children: React.ReactNode;
 }
 
-// Types for NuiContextProps
+// NuiContextProps
 export interface NuiContextProps {
   resource: string;
 }
 
-// Types for useNuiCallback
-export interface NuiCallbackOptions {
-  app: string;
-  method: string;
-  onSuccess: (data: any) => void;
-  onError: (err: any) => void;
-}
+// useNuiCallback
+export function useNuiCallback(
+  app: string,
+  method: string,
+  onSuccess: (data: unknown) => void,
+  onError: (err: unknown) => void
+): void;
 
-// Types for useNuiEvent
-export type NuiEventHandler = (data: any) => void;
+// useNuiEvent
+export function useNuiEvent(
+  app: string,
+  method: string,
+  handler: (data: unknown) => void
+): void;
 
-export interface NuiEventOptions {
-  app: string;
-  method: string;
-  handler: (data: any) => void;
-}
-
-// Types for useNuiRequest
-export interface NuiRequestOptions<T> {
+// NuiRequestOptions
+export interface NuiRequestOptions {
   resource?: string;
   timeout?: number;
-  mockData?: T;
+  mockData?: unknown;
 }
 
-// Types for safeFetch
-export type SafeFetchFunction = <T>(method: string, data?: any, mockData?: T) => Promise<T>;
+// useNuiRequest
+export function useNuiRequest(options?: NuiRequestOptions): {
+  send: (method: string, data?: unknown) => Promise<unknown>;
+};
 
-// Types for customFetchNui
-export type CustomFetchNui = <T>(method: string, data?: any) => Promise<T>;
+// safeFetch
+export function safeFetch(
+  method: string,
+  data?: unknown,
+  mockData?: unknown
+): Promise<unknown>;
 
-// Types for debugData and debugEvent
-export type DebugData = (method: string, data: any) => void;
-export type DebugEvent = (event: { app: string; method: string; data: any }) => void;
+// customFetchNui
+export function customFetchNui(
+  method: string,
+  data?: unknown
+): Promise<unknown>;
+
+// debugData
+export function debugData(method: string, data: unknown): void;
+
+// debugEvent
+export function debugEvent(event: { app: string; method: string; data: unknown }): void;
+
+// Dummy export to satisfy DefinitelyTyped value export rule
+export const __DO_NOT_USE: undefined;
